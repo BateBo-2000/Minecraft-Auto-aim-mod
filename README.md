@@ -1,11 +1,11 @@
-# 🎯 Boko's Auto-Aim Mod
+# Boko's Auto-Aim Mod
 **A lightweight, high-performance auto-aim utility for Fabric 1.21.1.**
 
 Boko's Mod helps you keep your eyes on the target. Whether you're practicing your aim or just want a smoother combat experience, this mod provides a snapping mechanism to the closest player or entity with a simple keypress.
 
 ---
 
-## ✨ Features
+## Features
 * **Dual-Mode Aiming:** Use a "Hold" key for quick snaps or a "Toggle" key for permanent lock-on.
 * **Target Filtering:** Smart logic that ignores yourself and dead entities.
 * **HUD Notifications:** Real-time status messages above your hotbar when toggling modes.
@@ -13,7 +13,7 @@ Boko's Mod helps you keep your eyes on the target. Whether you're practicing you
 
 ---
 
-## 🎮 How to Use
+## How to Use
 
 ### Default Keybindings
 | Action | Key | Description |
@@ -25,7 +25,7 @@ Boko's Mod helps you keep your eyes on the target. Whether you're practicing you
 
 ---
 
-## 🛠️ Installation
+## Installation
 1.  Ensure you have **[Fabric Loader](https://fabricmc.net/)** installed for 1.21.1.
 2.  Download the latest `.jar` from the [Releases](https://github.com/YOUR_USERNAME/auto-aim-mod/releases) page.
 3.  Place the `.jar` file into your Minecraft `%appdata%/.minecraft/mods` folder.
@@ -33,7 +33,7 @@ Boko's Mod helps you keep your eyes on the target. Whether you're practicing you
 
 ---
 
-## 🔨 Technical Details
+## Technical Details
 * **Minecraft Version:** 1.21.1
 * **Loader:** Fabric
 * **Language:** Java 21
@@ -41,7 +41,7 @@ Boko's Mod helps you keep your eyes on the target. Whether you're practicing you
 
 ---
 
-## 📜 License
+## License
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 ---
