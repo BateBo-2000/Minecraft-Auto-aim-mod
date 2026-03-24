@@ -8,8 +8,8 @@
 		"Bokkata"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/BateBo-2000/Minecraft-Auto-aim-mod",
+		"sources": "https://github.com/BateBo-2000/Minecraft-Auto-aim-mod"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/auto_aim_mod/icon.png",
@@ -31,7 +31,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.18.4",
-		"minecraft": "~1.21.11",
+		"minecraft": ">=1.21",
 		"java": ">=21",
 		"fabric-api": "*"
 	}
