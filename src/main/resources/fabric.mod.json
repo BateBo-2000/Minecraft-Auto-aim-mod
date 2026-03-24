@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "auto_aim_mod",
+	"version": "1.0.0",
+	"name": "Boko's Mod",
+	"description": "This is a mod that auto-aims your camera to the closest player.",
+	"authors": [
+		"Bokkata"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/auto_aim_mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"devbokkata.BokosMod"
+		],
+		"client": [
+			"devbokkata.BokosModClient"
+		]
+	},
+	"mixins": [
+		"auto_aim_mod.mixins.json",
+		{
+			"config": "auto_aim_mod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
