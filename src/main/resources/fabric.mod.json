@@ -8,7 +8,7 @@
 		"Me!"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
+		"homepage": "https://github.com/BateBo-2000/Minecraft-Auto-aim-mod",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
@@ -31,7 +31,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.18.4",
-		"minecraft": "~26.1",
+		"minecraft": ">=26.1",
 		"java": ">=25",
 		"fabric-api": "*"
 	}
