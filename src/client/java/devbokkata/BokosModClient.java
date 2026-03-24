@@ -69,6 +69,7 @@ public class BokosModClient implements ClientModInitializer {
 		if (client.world == null) return null;
 
 		return StreamSupport.stream(client.world.getEntities().spliterator(), false)
+
 				.filter(entity -> entity instanceof net.minecraft.entity.player.PlayerEntity)
 				/*
 				* For testing on everything:

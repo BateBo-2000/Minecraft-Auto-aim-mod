@@ -1,4 +1,5 @@
 {
-  "key.auto_aim_mod.look_at": "Snap to Target",
+  "key.auto_aim_mod.hold": "Snap to Target",
+  "key.auto_aim_mod.toggle": "Toggle snap to target",
   "key.category.auto_aim_mod.main": "Bokkata's Mod"
 }
