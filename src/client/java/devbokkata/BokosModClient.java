@@ -69,11 +69,11 @@ public class BokosModClient implements ClientModInitializer {
 		if (client.world == null) return null;
 
 		return StreamSupport.stream(client.world.getEntities().spliterator(), false)
+				.filter(entity -> entity instanceof LivingEntity)
 
-				.filter(entity -> entity instanceof net.minecraft.entity.player.PlayerEntity)
 				/*
 				* For testing on everything:
-				* .filter(entity -> entity instanceof LivingEntity)
+				* .filter(entity -> entity instanceof net.minecraft.entity.player.PlayerEntity)
 				* */
 				.map(entity -> (LivingEntity) entity)
 				.filter(entity -> entity != client.player && entity.isAlive())
@@ -90,10 +90,23 @@ public class BokosModClient implements ClientModInitializer {
 		double dz = targetPos.z - playerPos.z;
 		double dh = Math.sqrt(dx * dx + dz * dz);
 
-		float yaw = (float) Math.toDegrees(Math.atan2(-dx, dz));
-		float pitch = (float) (-(Math.atan2(dy, dh) * 180.0D / Math.PI));
+		float targetYaw = (float) Math.toDegrees(Math.atan2(dz, dx)) - 90.0F;
+		float targetPitch = (float) (-(Math.atan2(dy, dh) * 180.0D / Math.PI));
 
-		player.setYaw(yaw);
-		player.setPitch(pitch);
+		// 0.45f is the "Stickiness". 1.0f is instant snap, 0.1f is very slow.
+		// This allows the spear to "track" the target during the jab animation.
+		float smoothYaw = lerpAngle(player.getYaw(), targetYaw, 0.45f);
+		float smoothPitch = lerpAngle(player.getPitch(), targetPitch, 0.45f);
+
+		player.setYaw(smoothYaw);
+		player.setPitch(smoothPitch);
+	}
+
+	// Helper method to handle the 360-degree wrap-around (prevents the head-spin bug)
+	private float lerpAngle(float start, float end, float pct) {
+		float d = end - start;
+		while (d < -180) d += 360;
+		while (d >= 180) d -= 360;
+		return start + d * pct;
 	}
 }
