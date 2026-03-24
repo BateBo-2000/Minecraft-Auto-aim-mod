@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "bokos-spear-aim-bot",
+	"version": "${version}",
+	"name": "Boko's Spear Aim Bot",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/bokos-spear-aim-bot/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"bokkata.BokosSpearAimBot"
+		],
+		"client": [
+			"bokkata.BokosSpearAimBotClient"
+		]
+	},
+	"mixins": [
+		"bokos-spear-aim-bot.mixins.json",
+		{
+			"config": "bokos-spear-aim-bot.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~26.1",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
