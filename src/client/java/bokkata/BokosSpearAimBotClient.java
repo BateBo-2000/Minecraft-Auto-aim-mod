@@ -85,7 +85,7 @@ public class BokosSpearAimBotClient implements ClientModInitializer {
 		double dh = Math.sqrt(dx * dx + dz * dz);
 
 		float targetYaw = (float) Math.toDegrees(Math.atan2(dz, dx)) - 90.0F;
-		float targetPitch = (float) (-(Math.atan2(dy, dh) * 180.0D / Math.PI));
+		float targetPitch = calculateDynamicPitch(dh, dy);
 
 		// getYaw/getPitch are now getYRot/getXRot
 		float smoothYaw = lerpAngle(player.getYRot(), targetYaw, 0.45f);
@@ -93,6 +93,20 @@ public class BokosSpearAimBotClient implements ClientModInitializer {
 
 		player.setYRot(smoothYaw);
 		player.setXRot(smoothPitch);
+	}
+
+	//Bezier curve right before impact to correct for the height.
+	private float calculateDynamicPitch(double dh, double dy) {
+		float targetPitch = (float) (-(Math.atan2(dy, dh) * 180.0D / Math.PI));
+
+		if (dh >= 5.0D && dh <= 35.0D) {
+			double pullIntensity = .7D;
+			double correction = dy * pullIntensity;
+
+			targetPitch = (float) (-(Math.atan2(dy + correction, dh) * 180.0D / Math.PI));
+		}
+
+		return targetPitch;
 	}
 
 	private float lerpAngle(float start, float end, float pct) {

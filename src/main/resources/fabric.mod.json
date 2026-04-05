@@ -3,13 +3,13 @@
 	"id": "bokos-spear-aim-bot",
 	"version": "${version}",
 	"name": "Boko's Spear Aim Bot",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This mod helps you aim your spear",
 	"authors": [
-		"Me!"
+		"Bokkata"
 	],
 	"contact": {
 		"homepage": "https://github.com/BateBo-2000/Minecraft-Auto-aim-mod",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/BateBo-2000/Minecraft-Auto-aim-mod"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/bokos-spear-aim-bot/icon.png",
